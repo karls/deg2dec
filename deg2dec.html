@@ -8,30 +8,26 @@
     <script src="jquery.js"></script>
     <script src="deg2dec.js"></script>
   </head>
-  <body>
+  <body class="converter-app">
     <div class="search-options">
       <div class="by-address">
         <h2>Aadress</h2>
         <small>Konverteeri vabas vormis aadress koordinaatideks.</small>
-        <form onSubmit="deg2dec.submitLookup(); return false;">
-          <input type="text"
-                 id="address-input"
-                 placeholder="Sisesta aadress">
-          <div id="address-error">Liiga palju tulemusi! Sisesta täpsem aadress.</div>
-          <button type="submit" id="lookup">Konverteeri</button>
-        </form>
+        <input type="text"
+               id="address-input"
+               placeholder="Sisesta aadress">
+        <div id="address-error">Liiga palju tulemusi! Sisesta täpsem aadress.</div>
+        <button id="lookup">Konverteeri</button>
       </div>
 
       <div class="by-google-coords">
         <h2>Google Maps koordinaadid</h2>
-        <small>Vorminda Google Maps koordinaadid Nextile sobivaks.</span>
-        <form onSubmit="deg2dec.submitConversion(); return false">
-          <input type="text"
-                 id="coords-input"
-                 class="coords"
-                 placeholder="Kopeeri Google Maps koordinaadid">
-          <button type="submit" id="convert">Vorminda</button>
-        </form>
+        <small>Vorminda Google Maps koordinaadid Nextile sobivaks.</small>
+        <input type="text"
+               id="coords-input"
+               class="coords"
+               placeholder="Kopeeri Google Maps koordinaadid">
+        <button id="convert">Vorminda</button>
       </div>
     </div>
 
