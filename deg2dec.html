@@ -1,26 +1,44 @@
-<!doctype html>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!DOCTYPE html>
 <html>
   <head>
-    <title>Deg2Dec</title>
+    <title>Konverteeri koordinaate</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <link rel="stylesheet" href="stylesheet.css" type="text/css" />
+    <link href="http://fonts.googleapis.com/css?family=Droid+Sans:400,700" rel="stylesheet">
     <script src="jquery.js"></script>
     <script src="deg2dec.js"></script>
   </head>
   <body>
-    <h2>Otsi aadressi</h2>
-    <label for="address">Aadress</label>
-    <input type="text" id="address"></input>
-    <button id="lookup">Otsi..</button><br>
-    <span id="address-status"></span>
+    <div class="search-options">
+      <div class="by-address">
+        <h2>Aadress</h2>
+        <small>Konverteeri vabas vormis aadress koordinaatideks.</small>
+        <form onSubmit="deg2dec.submitLookup(); return false;">
+          <input type="text"
+                 id="address-input"
+                 placeholder="Sisesta aadress">
+          <div id="address-error">Liiga palju tulemusi! Sisesta täpsem aadress.</div>
+          <button type="submit" id="lookup">Konverteeri</button>
+        </form>
+      </div>
 
-    <h2>Või vorminda koordinaadid</h2>
-    <label for="coords-input">Koordinaadid Google'st</label>
-    <input type="text" id="coords-input" class="coords"></input>
-    <button id="convert">Vorminda</button><br>
+      <div class="by-google-coords">
+        <h2>Google Maps koordinaadid</h2>
+        <small>Vorminda Google Maps koordinaadid Nextile sobivaks.</span>
+        <form onSubmit="deg2dec.submitConversion(); return false">
+          <input type="text"
+                 id="coords-input"
+                 class="coords"
+                 placeholder="Kopeeri Google Maps koordinaadid">
+          <button type="submit" id="convert">Vorminda</button>
+        </form>
+      </div>
+    </div>
 
-    <h2>Väljundkoordinaadid</h2>
-    <!-- <label for="coords-output">Koordinaadid</label> -->
-    <input type="text" id="coords-output" class="coords"></input>
+    <div class="result">
+      <h2>Väljundkoordinaadid</h2>
+      <div id="coords-output" class="coords"></div>
+      <span class="hint">Konverteerimiseks sisesta aadress või Google Maps koordinaadid.</span>
+    </div>
   </body>
 </html>
