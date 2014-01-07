@@ -7,28 +7,28 @@
   color: #585f63;
 }
 
-h2 {
+.converter-app h2 {
   margin: 0;
   margin-bottom: 15px;
   font-size: 20px;
 }
 
-.search-options {
+.converter-app .search-options {
   display: table;
   width: 100%;
 }
 
-.by-address,
-.by-google-coords {
+.converter-app .by-address,
+.converter-app .by-google-coords {
   display: table-cell;
   width: 50%;
   padding: 20px;
 }
 
-.by-address       { background-color: rgba(148, 166, 57, 0.4); }
-.by-google-coords { background-color: rgba(168, 191, 176, 0.3); }
+.converter-app .by-address       { background-color: rgba(148, 166, 57, 0.4); }
+.converter-app .by-google-coords { background-color: rgba(168, 191, 176, 0.3); }
 
-input {
+.converter-app input {
   display: block;
   width: 100%;
   height: 35px;
@@ -37,26 +37,26 @@ input {
   box-sizing: border-box;
 }
 
-button {
+.converter-app button {
   display: block;
   margin: 15px auto 0;
   padding: 0 15px;
   line-height: 30px;
 }
 
-#address-error {
+.converter-app #address-error {
   display: none;
   margin-top: 15px;
   font-size: smaller;
   color: #A10615;
 }
 
-.result {
+.converter-app .result {
   padding: 40px 20px 70px;
   text-align: center;
 }
 
-.coords {
+.converter-app .coords {
   display: none;
   position: relative;
   margin-top: 10px;
@@ -65,18 +65,18 @@ button {
   -webkit-transition: background-color 0.2s;
 }
 
-.coords.showing {
+.converter-app .coords.showing {
   display: inline-block;
 }
 
-#coords-output { padding: 5px; }
+.converter-app #coords-output { padding: 5px; }
 
-.coords.showing #coords-output:hover {
+.converter-app .coords.showing #coords-output:hover {
   background-color: #f0f0f0;
   border-radius: 5px;
 }
 
-.copy-hint {
+.converter-app .copy-hint {
   display: block;
   position: absolute;
   bottom: -35px;
@@ -87,15 +87,15 @@ button {
   -webkit-transition: opacity 0.2s;
 }
 
-.coords.showing:hover .copy-hint {
+.converter-app .coords.showing:hover .copy-hint {
   opacity: 1;
 }
 
-.coords.showing:hover .copy-hint:hover {
+.converter-app .coords.showing:hover .copy-hint:hover {
   opacity: 0;
 }
 
-.copy-hint > span {
+.converter-app .copy-hint > span {
   padding: 3px 7px;
   border-radius: 3px;
   font-size: 12px;
@@ -104,7 +104,7 @@ button {
   color: #fff;
 }
 
-.hint {
+.converter-app .hint {
   font-size: 14px;
   font-style: italic;
 }

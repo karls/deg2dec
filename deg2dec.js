@@ -26,23 +26,23 @@ function bindSubmission (button, input, action) {
 };
 
 function submitLookup () {
-  $("#coords-output").val("");
-  $("#address-error").hide();
-  $("#coords-input").val("");
+  $(".converter-app #coords-output").val("");
+  $(".converter-app #address-error").hide();
+  $(".converter-app #coords-input").val("");
   lookupCoords();
 };
 
 function submitConversion () {
-  $("#coords-output").val("");
-  $("#address-error").hide();
-  $("#address-input").val("");
+  $(".converter-app #coords-output").val("");
+  $(".converter-app #address-error").hide();
+  $(".converter-app #address-input").val("");
   convertCoords();
 }
 
 function lookupCoords () {
   var addressLookup = "http://maps.googleapis.com/maps/api/geocode/json?sensor=false&address=";
 
-  var url = $("#address-input").val().replace(/[ ,]+/g, "+");
+  var url = $(".converter-app #address-input").val().replace(/[ ,]+/g, "+");
   $.ajax({
     type: "GET",
     url: encodeURI(addressLookup + url),
@@ -54,7 +54,7 @@ function lookupCoords () {
 };
 
 function convertCoords () {
-  var raw = $("#coords-input").val();
+  var raw = $(".converter-app #coords-input").val();
 
   var minutes = raw.match(/\d+\.\d\d\d/g),
       degrees = raw.match(/\d+. /g, "");
@@ -80,14 +80,14 @@ function showResult (data, status, xhr) {
              + data.results[0].geometry.location.lng.toFixed(6);
     populateOutput(coords);
   } else {
-    $("#address-error").show();
-    $("#address-input").focus();
+    $(".converter-app #address-error").show();
+    $(".converter-app #address-input").focus();
   }
 };
 
 function populateOutput (coordString) {
-  $(".hint").text("");
-  $(".coords").addClass("showing");
-  $("#coords-output").text(coordString);
+  $(".converter-app .hint").text("");
+  $(".converter-app .coords").addClass("showing");
+  $(".converter-app #coords-output").text(coordString);
 };
 
