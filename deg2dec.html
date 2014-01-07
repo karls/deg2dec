@@ -25,7 +25,6 @@
         <small>Vorminda Google Maps koordinaadid Nextile sobivaks.</small>
         <input type="text"
                id="coords-input"
-               class="coords"
                placeholder="Kopeeri Google Maps koordinaadid">
         <button id="convert">Vorminda</button>
       </div>
@@ -33,7 +32,10 @@
 
     <div class="result">
       <h2>Väljundkoordinaadid</h2>
-      <div id="coords-output" class="coords"></div>
+      <div class="coords">
+        <span id="coords-output"></span>
+        <div class="copy-hint"><span>Topeltklikk selekteerib!</span></div>
+      </div>
       <span class="hint">Konverteerimiseks sisesta aadress või Google Maps koordinaadid.</span>
     </div>
   </body>

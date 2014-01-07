@@ -87,6 +87,7 @@ function showResult (data, status, xhr) {
 
 function populateOutput (coordString) {
   $(".hint").text("");
+  $(".coords").addClass("showing");
   $("#coords-output").text(coordString);
 };
 
