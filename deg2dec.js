@@ -88,6 +88,10 @@ function showResult (data, status, xhr) {
 function populateOutput (coordString) {
   $(".converter-app .hint").text("");
   $(".converter-app .coords").addClass("showing");
+  $(".converter-app .result #google-link").css("display", "block");
   $(".converter-app #coords-output").text(coordString);
+  var coordPair = coordString.split("x");
+  coordPair.push(coordPair.shift());
+  $(".converter-app #google-link").attr("href", "https://www.google.com/maps?q=" +
+					coordPair.join(","));
 };
-
