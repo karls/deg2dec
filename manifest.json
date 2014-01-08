@@ -3,7 +3,7 @@
 
     "name": "Deg2Dec",
     "description": "Convert Google Maps lat/lon to decimal",
-    "version": "1.0",
+    "version": "0.2",
 
     "permissions": ["http://maps.googleapis.com/"],
 
