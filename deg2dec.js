@@ -70,14 +70,14 @@ function convertCoords () {
   var lat = (degrees[0] + minutes[0]).toFixed(6);
   var lng = (degrees[1] + minutes[1]).toFixed(6);
 
-  populateOutput(lat + "x" + lng);
+  populateOutput(lng + "x" + lat);
 };
 
 function showResult (data, status, xhr) {
   if (data.results.length == 1) {
-    var coords = data.results[0].geometry.location.lat.toFixed(6)
+    var coords = data.results[0].geometry.location.lng.toFixed(6)
              + "x"
-             + data.results[0].geometry.location.lng.toFixed(6);
+             + data.results[0].geometry.location.lat.toFixed(6);
     populateOutput(coords);
   } else {
     $(".converter-app #address-error").show();
