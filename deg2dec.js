@@ -2,6 +2,7 @@
 
 // Initialise tool when content is loaded
 (function init () {
+  // register handlers
   document.addEventListener("DOMContentLoaded", function () {
     registerHandlers();
   });
@@ -10,18 +11,27 @@
 function registerHandlers () {
   bindSubmission("#lookup", "#address-input", submitLookup);
   bindSubmission("#convert", "#coords-input", submitConversion);
+  $("#google-link").click(trackClick);
+};
+
+function trackClick(e) {
+  _gaq.push(['_trackEvent', e.target.id, 'clicked']);
 };
 
 // Register a click event on a button
 // and an enter event on an input
 // to perform an action
 function bindSubmission (button, input, action) {
-  $(button).click(function() {
+  $(button).click(function(e) {
     action();
+    trackClick(e)
   });
 
   $(input).keypress(function (event) {
-    if (event.which == 13) action();
+    if (event.which == 13) {
+      action();
+      trackClick(event)
+    }
   });
 };
 
